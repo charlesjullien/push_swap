@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/25 18:00:47 by cjullien          #+#    #+#             */
-/*   Updated: 2021/10/25 18:00:50 by cjullien         ###   ########.fr       */
+/*   Created: 2021/10/31 17:01:50 by cjullien          #+#    #+#             */
+/*   Updated: 2021/10/31 17:01:52 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	op_sb(t_data *d)
 
 void	op_pb(t_data *d)
 {
-	long i;
+	long	i;
 
 	i = 0;
 	d->b[0] = d->a[0];

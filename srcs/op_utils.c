@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/25 18:00:58 by cjullien          #+#    #+#             */
-/*   Updated: 2021/10/25 18:01:00 by cjullien         ###   ########.fr       */
+/*   Created: 2021/10/31 16:56:26 by cjullien          #+#    #+#             */
+/*   Updated: 2021/10/31 16:56:28 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	copy_stacks(t_data *d)//leak dans le while ??
 {
-	long i;
+	long	i;
 
 	i = 0;
 	while (i < d->len)
@@ -27,7 +27,7 @@ void	copy_stacks(t_data *d)//leak dans le while ??
 
 void	get_min_max(t_data *d)
 {
-	long i;
+	long	i;
 
 	i = 0;
 	d->min = d->a[0];
@@ -44,7 +44,7 @@ void	get_min_max(t_data *d)
 
 void	sorted_push_min_first(t_data *d)
 {
-	long		i;
+	long	i;
 	long	n;
 
 	i = 0;
@@ -69,27 +69,27 @@ void	sorted_push_min_first(t_data *d)
 	}
 }
 
-void    get_a_sorted(t_data *d)
+void	get_a_sorted(t_data *d)
 {
-    long i;
-    long j;
+	long	i;
+	long	j;
 
-    i = 0;
-    while (i < d->len)
-    {
-        d->sorted[i] = d->a[i];
-        i++;
-    }
-    i = 0;
-    while (i < d->len - 1)
-    {
-        j = i + 1;
-        while (j < d->len)
-        {
-            if (d->sorted[i] > d->sorted[j])
-                ft_swap(&d->sorted[i], &d->sorted[j]);
-            j++;
-        }
-        i++;
-    }
+	i = 0;
+	while (i < d->len)
+	{
+		d->sorted[i] = d->a[i];
+		i++;
+	}
+	i = 0;
+	while (i < d->len - 1)
+	{
+		j = i + 1;
+		while (j < d->len)
+		{
+			if (d->sorted[i] > d->sorted[j])
+				ft_swap(&d->sorted[i], &d->sorted[j]);
+			j++;
+		}
+		i++;
+	}
 }

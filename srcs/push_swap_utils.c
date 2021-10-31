@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/31 16:51:33 by cjullien          #+#    #+#             */
+/*   Updated: 2021/10/31 16:51:37 by cjullien         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
-int		ft_is_space(char c)
+int	ft_is_space(char c)
 {
-	if (c == '\f' || c == '\t' || c == '\v' || c == '\n' 
+	if (c == '\f' || c == '\t' || c == '\v' || c == '\n'
 		|| c == '\r' || c == ' ')
 		return (1);
 	return (0);
 }
 
-int		ft_isdigit(int	n)
+int	ft_isdigit(int n)
 {
 	if (n >= 48 && n <= 57)
 	{
@@ -40,4 +52,3 @@ void	ft_swap(long *a, long *b)
 	*a = *b;
 	*b = swap;
 }
-

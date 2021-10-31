@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/25 18:00:40 by cjullien          #+#    #+#             */
-/*   Updated: 2021/10/25 18:00:41 by cjullien         ###   ########.fr       */
+/*   Created: 2021/10/31 16:59:25 by cjullien          #+#    #+#             */
+/*   Updated: 2021/10/31 17:00:25 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ void	op_sa(t_data *d)
 
 void	op_pa(t_data *d)
 {
-	long i;
+	long	i;
 
 	i = 0;
 	d->a[0] = d->b[0];
 	d->len_b--;
-	d->len_a++;;
+	d->len_a++;
 	while (i < d->len_b)
 	{
 		d->b[i] = d->b_copy[i + 1];
@@ -46,7 +46,6 @@ void	op_pa(t_data *d)
 	ft_putstr_fd("pa\n", 1);
 	copy_stacks(d);
 }
-
 
 void	op_rra(t_data *d)
 {
@@ -77,4 +76,3 @@ void	op_ra(t_data *d)
 	ft_putstr_fd("ra\n", 1);
 	copy_stacks(d);
 }
-

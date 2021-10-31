@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/31 16:52:55 by cjullien          #+#    #+#             */
+/*   Updated: 2021/10/31 16:54:35 by cjullien         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 void	print_tab(long *tab, t_data *data)
 {
-	long i;
+	long	i;
 
 	i = 0;
 	printf("\n");
@@ -72,11 +84,11 @@ void	struct_init(t_data *data)
 	data->sorted = malloc(sizeof(long *) * 2);
 	data->sorted = malloc(sizeof(long) * data->len);
 	if (data->a == NULL || data->b == NULL || data->a_copy == NULL
-			|| data->b_copy == NULL || data->sorted == NULL)
-			ft_quit(data);
+		|| data->b_copy == NULL || data->sorted == NULL)
+		ft_quit(data);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_data	data;
 
