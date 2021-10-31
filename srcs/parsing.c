@@ -6,7 +6,7 @@
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 17:00:50 by cjullien          #+#    #+#             */
-/*   Updated: 2021/10/31 17:01:30 by cjullien         ###   ########.fr       */
+/*   Updated: 2021/10/31 17:58:13 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ void	get_len(t_data *d, int ac, char **av)
 		}
 		i++;
 	}
-	if (d->len == 1)
-		ft_quit(d);
 	d->len_a = d->len;
 	d->len_b = 0;
 }

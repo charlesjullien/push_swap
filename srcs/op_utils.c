@@ -6,7 +6,7 @@
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:56:26 by cjullien          #+#    #+#             */
-/*   Updated: 2021/10/31 16:56:28 by cjullien         ###   ########.fr       */
+/*   Updated: 2021/10/31 17:52:20 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,19 @@ void	sorted_push_min_first(t_data *d)
 	n = d->len / 2;
 	while (d->a[i] != d->min)
 		i++;
-	if (i <= n)
+	if (i > (n + 1))
 	{
-		while (i > 0)
+		while (i < d->len)
 		{
-			op_ra(d);
-			i--;
+			op_rra(d);
+			i++;
 		}
 	}
 	else
 	{
 		while (i > 0)
 		{
-			op_rra(d);
+			op_ra(d);
 			i--;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:52:55 by cjullien          #+#    #+#             */
-/*   Updated: 2021/10/31 16:54:35 by cjullien         ###   ########.fr       */
+/*   Updated: 2021/10/31 18:08:42 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,14 +77,21 @@ void	sorter(t_data *d)
 
 void	struct_init(t_data *data)
 {
+	printf("len = %ld\n", data->len);
 	data->a = malloc(sizeof(long) * data->len);
 	data->b = malloc(sizeof(long) * data->len);
 	data->a_copy = malloc(sizeof(long) * data->len);
 	data->b_copy = malloc(sizeof(long) * data->len);
-	data->sorted = malloc(sizeof(long *) * 2);
 	data->sorted = malloc(sizeof(long) * data->len);
+	data->chunks = data->len / 80;
+	if (data->len % 80)
+		data->chunks++;
+	data->med = malloc(sizeof(long) * data->chunks);
+	data->med_len = malloc(sizeof(long) * data->chunks);
+
 	if (data->a == NULL || data->b == NULL || data->a_copy == NULL
-		|| data->b_copy == NULL || data->sorted == NULL)
+		|| data->b_copy == NULL || data->sorted == NULL || data->med == NULL ||
+		data->med_len == NULL)
 		ft_quit(data);
 }
 
@@ -98,6 +105,8 @@ int	main(int ac, char **av)
 		return (0);
 	get_len(&data, ac, av);
 	struct_init(&data);
+	if (data.len == 1)
+		ft_quit(&data);
 	parser(&data, ac, av);
 	check_no_doublon(&data);
 	get_min_max(&data);

@@ -1,6 +1,6 @@
 NAME	=	push_swap
 CC		=	clang
-FLAGS	=	-Wall -Werror -Wextra
+FLAGS	=	-Wall -Werror -Wextra -g -fsanitize=address
 SRCS	=	srcs/6_or_more_utils.c srcs/check_errors.c srcs/main.c srcs/op_utils.c srcs/opa.c srcs/opb.c srcs/parsing.c srcs/push_swap_utils.c srcs/sort_6_or_more_2.c srcs/sort_6_or_more.c srcs/sort_less_6.c
 INCS	=	$(addprefix includes/, push_swap.h)
 OBJS	=	$(SRCS:.c=.o)
