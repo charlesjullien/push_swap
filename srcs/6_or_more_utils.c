@@ -6,7 +6,7 @@
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:57:02 by cjullien          #+#    #+#             */
-/*   Updated: 2021/10/31 17:28:31 by cjullien         ###   ########.fr       */
+/*   Updated: 2021/11/02 12:05:58 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ void	get_chunks(t_data *d)
 	long	count;
 
 	i = 0;
-	/*d->chunks = d->len / 80;
+	d->chunks = d->len / 80;
 	if (d->len % 80)
 		d->chunks++;
 	d->med = malloc(sizeof(long) * d->chunks);
 	d->med_len = malloc(sizeof(long) * d->chunks);
 	if (!d->med || !d->med_len)
-		ft_quit(d);*/
+		ft_quit(d);
 	d->med[d->chunks - 1] = d->max;
 	while (i < d->chunks - 1)
 	{

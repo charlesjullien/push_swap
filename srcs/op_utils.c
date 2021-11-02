@@ -6,13 +6,13 @@
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:56:26 by cjullien          #+#    #+#             */
-/*   Updated: 2021/10/31 17:52:20 by cjullien         ###   ########.fr       */
+/*   Updated: 2021/11/02 13:20:06 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	copy_stacks(t_data *d)//leak dans le while ??
+void	copy_stacks(t_data *d)
 {
 	long	i;
 

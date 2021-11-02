@@ -6,7 +6,7 @@
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 17:00:50 by cjullien          #+#    #+#             */
-/*   Updated: 2021/10/31 17:58:13 by cjullien         ###   ########.fr       */
+/*   Updated: 2021/11/02 13:21:20 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,10 @@ long int	ft_atoi(char *str, int *j)
 	return (nb * sign);
 }
 
-void	get_len(t_data *d, int ac, char **av)
+void	get_len(t_data *d, int ac, char **av, int i)
 {
-	int	i;
 	int	j;
 
-	i = 1;
 	j = 0;
 	d->len = 0;
 	while (i < ac)
@@ -52,11 +50,14 @@ void	get_len(t_data *d, int ac, char **av)
 		{
 			if (is_invalid(&av[i][j]))
 				ft_quit(d);
-			while (ft_isdigit(av[i][j]) || av[i][j] == '-')
+			if (av[i][j] == '-')
+				j++;
+			if (ft_isdigit(av[i][j]))
+				d->len++;
+			while (ft_isdigit(av[i][j]))
 				j++;
 			while (ft_is_space(av[i][j]))
 				j++;
-			d->len++;
 		}
 		i++;
 	}
@@ -76,7 +77,7 @@ void	parser(t_data *d, int ac, char **av)
 	while (i < ac)
 	{
 		j = 0;
-		while (av[i][j] && is_invalid(av[i]) == 0)
+		while (av[i][j] && is_invalid(av[i]) == 0 && k < d->len)
 		{
 			if (is_invalid(&av[i][j]))
 				ft_quit(d);

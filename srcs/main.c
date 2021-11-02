@@ -6,24 +6,27 @@
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:52:55 by cjullien          #+#    #+#             */
-/*   Updated: 2021/10/31 18:08:42 by cjullien         ###   ########.fr       */
+/*   Updated: 2021/11/02 13:21:38 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	print_tab(long *tab, t_data *data)
+int	is_sorted(t_data *d)
 {
-	long	i;
+	int	i;
+	int	j;
 
 	i = 0;
-	printf("\n");
-	while (i < data->len)
+	j = 1;
+	while (j < d->len)
 	{
-		printf("%ld, ", tab[i]);
+		if (d->a[i] > d->a[j])
+			return (0);
 		i++;
+		j++;
 	}
-	printf("\n\n\n");
+	return (1);
 }
 
 void	get_out_of_range_num(t_data *d)
@@ -55,14 +58,6 @@ void	sorter(t_data *d)
 	get_out_of_range_num(d);
 	copy_stacks(d);
 	get_a_sorted(d);
-	//printf("len = %d, a = %d, b = %d\n", d->len, d->len_a, d->len_b);
-	int i = 0;
-	while (i < d->len)
-	{
-		printf("%ld, ", d->a[i]);
-		i++;
-	}
-	printf("\n\n");
 	if (d->len <= 2)
 		sort_two(d);
 	else if (d->len == 3)
@@ -77,21 +72,15 @@ void	sorter(t_data *d)
 
 void	struct_init(t_data *data)
 {
-	printf("len = %ld\n", data->len);
 	data->a = malloc(sizeof(long) * data->len);
 	data->b = malloc(sizeof(long) * data->len);
 	data->a_copy = malloc(sizeof(long) * data->len);
 	data->b_copy = malloc(sizeof(long) * data->len);
 	data->sorted = malloc(sizeof(long) * data->len);
-	data->chunks = data->len / 80;
-	if (data->len % 80)
-		data->chunks++;
-	data->med = malloc(sizeof(long) * data->chunks);
-	data->med_len = malloc(sizeof(long) * data->chunks);
-
+	data->med = NULL;
+	data->med_len = NULL;
 	if (data->a == NULL || data->b == NULL || data->a_copy == NULL
-		|| data->b_copy == NULL || data->sorted == NULL || data->med == NULL ||
-		data->med_len == NULL)
+		|| data->b_copy == NULL || data->sorted == NULL)
 		ft_quit(data);
 }
 
@@ -103,14 +92,18 @@ int	main(int ac, char **av)
 		return (0);
 	if (check_argvs(ac, av) == 0)
 		return (0);
-	get_len(&data, ac, av);
+	get_len(&data, ac, av, 1);
 	struct_init(&data);
-	if (data.len == 1)
-		ft_quit(&data);
 	parser(&data, ac, av);
+	if (is_sorted(&data))
+	{
+		i_want_to_be_free(&data);
+		return (0);
+	}
 	check_no_doublon(&data);
 	get_min_max(&data);
 	sorter(&data);
 	print_tab(data.a, &data);
+	i_want_to_be_free(&data);
 	return (0);
 }

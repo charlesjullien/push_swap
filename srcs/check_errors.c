@@ -6,15 +6,14 @@
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:57:17 by cjullien          #+#    #+#             */
-/*   Updated: 2021/10/31 16:58:57 by cjullien         ###   ########.fr       */
+/*   Updated: 2021/11/02 12:02:58 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_quit(t_data *d)
+void	i_want_to_be_free(t_data *d)
 {
-	write(2, "Error\n", 6);
 	if (d->med)
 		free(d->med);
 	if (d->med_len)
@@ -29,6 +28,12 @@ void	ft_quit(t_data *d)
 		free(d->a_copy);
 	if (d->b_copy)
 		free(d->b_copy);
+}
+
+void	ft_quit(t_data *d)
+{
+	write(2, "Error\n", 6);
+	i_want_to_be_free(d);
 	exit(0);
 }
 

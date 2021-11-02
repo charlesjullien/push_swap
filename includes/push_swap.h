@@ -6,7 +6,7 @@
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 17:06:36 by cjullien          #+#    #+#             */
-/*   Updated: 2021/10/31 17:10:58 by cjullien         ###   ########.fr       */
+/*   Updated: 2021/11/02 13:21:57 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ struct			s_data
 };
 
 int		check_argvs(int ac, char **av);
-void	get_len(t_data *d, int ac, char **av);
+void	get_len(t_data *d, int ac, char **av, int i);
 void	parser(t_data *d, int ac, char **av);
 void	check_no_doublon(t_data *d);
 void	get_min_max(t_data *d);
@@ -83,5 +83,6 @@ void	move_chunk_into_b(t_data *d, long n, long i);
 void	move_chunk_into_a_2(t_data *d);
 void	get_index_min_max_2(t_data *d, long *min, long *max, long i);
 void	get_nb_moves(t_data *d);
+void	i_want_to_be_free(t_data *d);
 
 #endif
