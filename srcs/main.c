@@ -6,7 +6,7 @@
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:52:55 by cjullien          #+#    #+#             */
-/*   Updated: 2021/11/02 13:21:38 by cjullien         ###   ########.fr       */
+/*   Updated: 2021/11/02 14:08:17 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,6 @@ int	main(int ac, char **av)
 	check_no_doublon(&data);
 	get_min_max(&data);
 	sorter(&data);
-	print_tab(data.a, &data);
 	i_want_to_be_free(&data);
 	return (0);
 }
