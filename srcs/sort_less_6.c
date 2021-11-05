@@ -6,7 +6,7 @@
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 17:03:59 by cjullien          #+#    #+#             */
-/*   Updated: 2021/10/31 17:04:02 by cjullien         ###   ########.fr       */
+/*   Updated: 2021/11/02 19:57:44 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	sort_five2(t_data *d)
 	big_a = d->a[2];
 	while (d->len_b != 0)
 	{
-		if (d->len_b == 2 && d->b[1] < d->b[0])
+		if (d->len_b == 2 && d->b[1] < d->a[0])
 		{
 			op_sb(d);
 			op_pa(d);

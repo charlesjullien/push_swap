@@ -6,7 +6,7 @@
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:52:55 by cjullien          #+#    #+#             */
-/*   Updated: 2021/11/02 14:08:17 by cjullien         ###   ########.fr       */
+/*   Updated: 2021/11/05 17:52:18 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,12 +95,12 @@ int	main(int ac, char **av)
 	get_len(&data, ac, av, 1);
 	struct_init(&data);
 	parser(&data, ac, av);
+	check_no_doublon(&data);
 	if (is_sorted(&data))
 	{
 		i_want_to_be_free(&data);
 		return (0);
 	}
-	check_no_doublon(&data);
 	get_min_max(&data);
 	sorter(&data);
 	i_want_to_be_free(&data);

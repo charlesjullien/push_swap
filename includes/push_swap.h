@@ -18,7 +18,6 @@
 # include <unistd.h>
 # include <string.h>
 # include <sys/types.h>
-# include <sys/uio.h>
 # include <sys/errno.h>
 
 typedef struct s_data	t_data;
@@ -76,7 +75,6 @@ void	op_rrb(t_data *d);
 void	op_rra(t_data *d);
 void	op_rb(t_data *d);
 void	op_ra(t_data *d);
-void	print_tab(long *tab, t_data *data);
 void	ft_quit(t_data *d);
 void	get_chunks(t_data *d);
 void	move_chunk_into_b(t_data *d, long n, long i);
