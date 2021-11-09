@@ -6,7 +6,7 @@
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 17:00:50 by cjullien          #+#    #+#             */
-/*   Updated: 2021/11/05 18:11:56 by cjullien         ###   ########.fr       */
+/*   Updated: 2021/11/08 08:52:13 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ void	parser(t_data *d, int ac, char **av)
 			d->a[k] = ft_atoi(&av[i][j], &j);
 			if (d->a[k] < -2147483648 || d->a[k] > 2147483647)
 				ft_quit(d);
+			while (ft_is_space(av[i][j]))
+				j++;
 			k++;
 		}
 		i++;

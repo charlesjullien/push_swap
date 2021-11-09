@@ -6,7 +6,7 @@
 /*   By: cjullien <cjullien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:57:17 by cjullien          #+#    #+#             */
-/*   Updated: 2021/11/05 18:10:45 by cjullien         ###   ########.fr       */
+/*   Updated: 2021/11/08 08:27:25 by cjullien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	is_invalid(char *str)
 	{
 		if (str[i + 1])
 		{
-			if (str[i] == '-' && ft_isdigit(str[i + 1] != 1))
+			if (str[i] == '-' && ft_isdigit(str[i + 1]) != 1)
 				return (1);
 		}
 		if (ft_is_space(str[i]) != 1 && ft_isdigit(str[i]) != 1
